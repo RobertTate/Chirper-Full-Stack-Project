@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import Chirp from './Chirp';
-import kiwi from '../assets/kiwi.png';
-import Chirps from './Chirps'
 
 class Form extends Component {
     constructor(props) {
@@ -36,7 +34,7 @@ class Form extends Component {
                             onClick={() => {
                                 this.props.click(this.state.stateText);
                             }}
-                        >Submit</button>
+                        >SUBMIT</button>
                     </div>
                 </form>
             </Fragment>

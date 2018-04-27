@@ -1,11 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Chirp from './Chirp';
 import Chirps from './Chirps';
-import kiwi from '../assets/kiwi.png';
 import Header from './Header';
-import Form from './Form';
-
+import ChirpsID from './ChirpsID';
+import ChirpsEdit from './ChirpsEdit';
 
 const styles = {
     width: "18rem",
@@ -29,6 +27,8 @@ class App extends Component {
                     <Header />
                     <Switch>
                         <Route exact path="/" component={Chirps} />
+                        <Route exact path="/chirp/:id" component={ChirpsID} />
+                        <Route exact path="/chirp/edit/:id" component={ChirpsEdit} />
                     </Switch>
                 </Fragment>
             </Router>

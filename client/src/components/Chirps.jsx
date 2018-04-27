@@ -1,8 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Chirp from './Chirp';
-import kiwi from '../assets/kiwi.png';
-import Header from './Header';
 import Form from './Form';
 import ChirpList from './ChirpList';
 
@@ -16,7 +13,7 @@ class Chirps extends Component {
 
         this.state = {
             stateresult: [],
-            // stateText: ""
+            
 
         };
     }
@@ -43,7 +40,7 @@ class Chirps extends Component {
                         text: chirps[i].text,
                         id: i
                     }
-                    chirpArr.push(chirp);
+                    chirpArr.unshift(chirp);
                 }
             }
             this.setState({ stateresult: chirpArr });

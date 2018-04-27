@@ -7,7 +7,7 @@ class ChirpList extends Component {
             <Fragment>
                 {this.props.chirps.map((chirp) => {
                     return (
-                        <Chirp key={chirp.id} text={chirp.text} id={chirp.id} color="blue" />
+                        <Chirp key={chirp.id} text={chirp.text} id={chirp.id} />
                     )
                 })}
             </Fragment>
