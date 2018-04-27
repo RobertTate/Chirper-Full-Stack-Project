@@ -1,0 +1,23 @@
+.card {
+    border: 2px solid #1373a3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.custom {
+    height: 15%;
+    width: 15%;
+    display: inline-block;
+}
+
+button {
+    margin-top: 10px;
+}
+
+body {
+    background-color: #b3e6ff;
+}
+
+.display-4 {
+    font-family: 'Black Han Sans', sans-serif;
+}
