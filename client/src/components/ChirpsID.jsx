@@ -14,6 +14,7 @@ class ChirpsID extends Component {
     componentDidMount() {
         fetch("/api/chirps/" + this.props.match.params.id, {
             method: 'GET',
+            body: JSON.stringify({ text }),
             headers: new Headers({
                 'content-type': 'application/json'
             })
