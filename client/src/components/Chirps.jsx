@@ -31,29 +31,31 @@ class Chirps extends Component {
             })
         }).then((result) => result.json())
         .then((chirps) => {
-            let keys = Object.keys(chirps);
-            let chirpArr = [];
+            
+            // let keys = Object.keys(chirps);
+            // let chirpArr = [];
+            
+            // for (let i of keys) {
+            //     if (i !== 'nextid') {
+            //         let chirp = {
+            //             text: chirps[i].text,
+            //             id: i
+            //         }
+            //         chirpArr.unshift(chirp);
+            //     }
+            // }
 
-            for (let i of keys) {
-                if (i !== 'nextid') {
-                    let chirp = {
-                        text: chirps[i].text,
-                        id: i
-                    }
-                    chirpArr.unshift(chirp);
-                }
-            }
-            this.setState({ stateresult: chirpArr });
+            this.setState({ stateresult: chirps });
         }).catch((err) => {
             console.log(err);
         });
     }
 
     // When submit it clicked, the state of text is saved as an array value.
-    handleClick(text) {
+    handleClick(chirptext, locationtext) {
         fetch('/api/chirps/', {
             method: 'POST',
-            body: JSON.stringify({ text }),
+            body: JSON.stringify({ chirptext, locationtext }),
             headers: new Headers({
                 'content-type': 'application/json'
             })
@@ -69,7 +71,7 @@ class Chirps extends Component {
     render() {
         return (
             <Fragment>
-                <Form click={(text) => this.handleClick(text)} />
+                <Form click={(chirptext, locationtext) => this.handleClick(chirptext, locationtext)} />
                 <ChirpList chirps={this.state.stateresult} />
             </Fragment>
         );

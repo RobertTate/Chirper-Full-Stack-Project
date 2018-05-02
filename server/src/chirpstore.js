@@ -3,8 +3,6 @@ let chirps = { nextid: 0 };
 
 if(fs.existsSync('chirps.json')) {
     chirps = JSON.parse(fs.readFileSync('chirps.json'));
-    console.log('reading chirps.json');
-    console.log(chirps);
 }
 
 let getChirps = () => {

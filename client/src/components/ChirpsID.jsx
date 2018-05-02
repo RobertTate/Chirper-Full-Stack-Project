@@ -14,15 +14,12 @@ class ChirpsID extends Component {
     componentDidMount() {
         fetch("/api/chirps/" + this.props.match.params.id, {
             method: 'GET',
-            body: JSON.stringify({ text }),
             headers: new Headers({
                 'content-type': 'application/json'
             })
         }).then((result) => result.json())
-            .then((result) => {
-                // console.log(result);
-                result = result.text;
-                // console.log(result);
+            .then((chirp) => {
+                let result = chirp.text;
                 this.setState({
                     text: result
                 })
